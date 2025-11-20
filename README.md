@@ -17,6 +17,12 @@ Clone this repo and open it in **Rider** or **Visual Studio Code**:
     - `http://localhost:6000`
     - or port is shown in the console.
 
+### Frontend (Blazor Server)
+- Open the **`web/`** project in Rider or Visual Studio.
+- Set it as the startup project.
+- Run (F5).
+- port is shown in the console.
+
 ## Database Service Simulator
 
 This project uses a simulated customer database for development and testing.
@@ -28,7 +34,7 @@ A full simulator is provided here:
 ## 🗂 Backend Architecture Diagram
 
 <p align="center">
-  <img src="./docs/diagram.svg" width="750" />
+  <img src="https://raw.githubusercontent.com/Odze/Customer-Search-Service/main/docs/Diagram.svg" width="750" />
 </p>
 
 ## 📁 Backend Project File Overview

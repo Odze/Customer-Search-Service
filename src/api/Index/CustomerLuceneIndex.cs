@@ -117,10 +117,10 @@ namespace api.Index
             }
         }
         
-        public IReadOnlyList<int> Search(string query, int maxResults = 20)
+        public IReadOnlyList<int> Search(string query, int maxResults = 50)
         {
             if (string.IsNullOrWhiteSpace(query))
-                return Array.Empty<int>();
+                return [];
 
             query = query.Trim().ToLowerInvariant();
 

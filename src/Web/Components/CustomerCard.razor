@@ -1,0 +1,27 @@
+@using Web.Payloads
+
+@if (Customer is not null)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>@Customer.Value.FirstName @Customer.Value.LastName</h5>
+
+            <p><strong>ID:</strong> @Customer.Value.Id</p>
+
+            @if (Customer.Value.Email is not null)
+            {
+                <p>
+                    <strong>Emails:</strong><br />
+                    @foreach (string mail in Customer.Value.Email)
+                    {
+                        <span>@mail</span><br />
+                    }
+                </p>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public CustomerPayload? Customer { get; set; }
+}

@@ -1,0 +1,48 @@
+﻿@page "/"
+@using Web.Payloads
+@using Web.Services
+@inject SearchService SearchService
+
+@rendermode InteractiveServer
+
+<h3>Search Customers</h3>
+
+<div class="input-group mb-3">
+    <input class="form-control"
+           placeholder="Type name or email..."
+           @bind="query" />
+    <button class="btn btn-primary" @onclick="DoSearch">Search</button>
+</div>
+
+@if (IsLoading)
+{
+    <p>Searching...</p>
+}
+else if (Results.Count == 0 && query.Length > 1)
+{
+    <p>No results found.</p>
+}
+
+@foreach (CustomerPayload customer in Results)
+{
+    <CustomerCard Customer="customer" />
+}
+
+@code {
+    private string query = "";
+    private bool IsLoading;
+    private List<CustomerPayload> Results = new();
+
+    private async Task DoSearch()
+    {
+        if (string.IsNullOrWhiteSpace(query) || query.Length < 2)
+        {
+            Results.Clear();
+            return;
+        }
+
+        IsLoading = true;
+        Results = await SearchService.SearchAsync(query);
+        IsLoading = false;
+    }
+}
