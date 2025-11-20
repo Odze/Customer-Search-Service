@@ -1,0 +1,82 @@
+## Build artifacts
+bin/
+obj/
+out/
+
+## Visual Studio cache
+.vs/
+*.user
+*.suo
+
+## Rider / JetBrains
+.idea/
+*.iml
+
+## VS Code
+.vscode/
+
+## Logs
+*.log
+logs/
+Log/
+log/
+logs/**/*.log
+
+## Temp
+*.tmp
+*.temp
+*.bak
+
+## Configuration secrets
+appsettings.Development.json
+appsettings.*.local.json
+*.secret.json
+
+## Publish
+publish/
+dist/
+artifacts/
+
+## Backups
+*.bak
+*.old
+
+## Dotnet dev certs
+*.pfx
+*.p12
+
+## Docker
+docker-compose.override.yml
+docker-data/
+docker-volume/
+*.pid
+
+## OS Generated
+.DS_Store
+Thumbs.db
+
+## Lucene.NET Indexes
+# Do NOT commit these – they are local binary index files!
+LuceneIndex/
+LuceneIndex/*
+
+## ZMQ temp files (if exist)
+*.zmq
+
+## ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+## Test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+## NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+package-cache/
+*.sln
